@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
+// Route::get('/', function () { //  return view yang bernama welcome
+//     return view('welcome');
+// });
+
+Route::get('/', function () { // Router sendiri 
+    return view('home' , [
+       
+    ]);
 });
 
-Route::get('/', function () {
-    return view('app');
-});
 
+Route::get('/profiles', function () { 
+    return view('profile');
+});
