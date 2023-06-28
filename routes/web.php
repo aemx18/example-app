@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,6 @@ Route::get('/', function () { // Router sendiri
 });
 
 
-Route::get('/profiles', function () { 
-    return view('profile');
-});
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profiles.update');
+
